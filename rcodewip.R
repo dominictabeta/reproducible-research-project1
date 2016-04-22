@@ -81,6 +81,6 @@ for (i in 1:nrow(daylabeled)) {
 groupbydaylabel<-group_by(daylabeled,daylabel,interval)
 weekdaycompare<-summarize(groupbydaylabel,avgstep=mean(steps))
 
-# Plotting the weekend vs weekend comparison of avg steps for each interval
+# Plotting the weekend vs weekday comparison of avg steps for each interval
 xyplot(avgstep~interval | factor(daylabel),data=weekdaycompare,groups=daylabel,type="l",xlab = "Interval",ylab="Number of steps",layout=c(1,2),col=c("blue","blue"),scales=list())
 
